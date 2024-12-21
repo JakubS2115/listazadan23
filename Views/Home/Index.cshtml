@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TaskManagerApp.Models.Task>
+
+<h1>Lista Zadań</h1>
+
+<a href="/Home/Create">Dodaj nowe zadanie</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Status</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@(task.IsCompleted ? "✅ Zakończone" : "⏳ W toku")</td>
+                <td>
+                    <a href="/Home/Complete/@task.Id">Oznacz jako ukończone</a> |
+                    <a href="/Home/Delete/@task.Id">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

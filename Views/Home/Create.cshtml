@@ -1,0 +1,12 @@
+﻿@model TaskManagerApp.Models.Task
+
+<h1>Dodaj Zadanie</h1>
+
+<form method="post">
+    <label for="Title">Tytuł zadania:</label>
+    <input type="text" id="Title" name="Title" value="@Model?.Title" required />
+
+    <button type="submit">Dodaj</button>
+</form>
+
+<a href="/Home/Index">Wróć do listy</a>
